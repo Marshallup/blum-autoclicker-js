@@ -21,15 +21,12 @@
       'button.kit-button.is-large.is-primary, a.play-btn[href="/game"], button.kit-button.is-large.is-primary'
     );
 
-    console.log(playButtons, "play buttons");
     playButtons.forEach((button) => {
       if (
         /Играть/.test(button.textContent) ||
         /Continue/.test(button.textContent)
       ) {
-        setTimeout(() => {
-          button.click();
-        }, 1000);
+        button.click();
       }
     });
   }
@@ -68,14 +65,14 @@
     console.log(canvas, "canvas");
   }
 
-  function onClickClower(el, isExp = false) {
-    if (isExp) {
+  function clickClower(el, isExp = false) {
+    el.onClick(el);
+
+    setTimeout(() => {
       el.isExplosion = true;
 
       el.addedAt = performance.now();
-    }
-
-    el.onClick(el);
+    }, 10);
   }
 
   /**
@@ -95,11 +92,7 @@
           "assetType" in firstArg.asset
         ) {
           if (!firstArg.isExplosion && firstArg.asset.assetType === "CLOVER") {
-            onClickClower(firstArg);
-
-            setTimeout(() => {
-              onClickClower(firstArg, true);
-            }, 10);
+            clickClower(firstArg);
           }
         }
 
