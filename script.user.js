@@ -53,20 +53,37 @@
     canvas.dispatchEvent(new MouseEvent("mouseup", prop));
   }
 
+  function getGameCanvas() {
+    return document.querySelector(".game-page.page canvas");
+  }
+
   function searchCanvas() {
-    const canvas = document.querySelector(".game-page.page canvas");
+    const canvas = getGameCanvas();
 
     if (!canvas) {
       return;
     }
 
     simulateRandomClick(canvas);
-
-    console.log(canvas, "canvas");
   }
 
-  function clickClower(el, isExp = false) {
-    el.onClick(el);
+  /**
+   *
+   * @param {*} el
+   * @description Клик по clower элементу
+   */
+  function clickClower(el) {
+    // el.onClick(el);
+
+    console.log(el.rect, "el rect");
+
+    const canvas = getGameCanvas();
+
+    if (!canvas) {
+      return;
+    }
+
+    simulateClick(canvas, el.rect.x, el.rect.y);
 
     setTimeout(() => {
       el.isExplosion = true;
