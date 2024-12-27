@@ -5,10 +5,10 @@
 // @author       Marshallup
 // @match        https://telegram.blum.codes/*
 // @grant        none
-// @icon
-// @downloadURL
-// @updateURL
-// @homepage     https://github.com/
+// @icon         https://github.com/Marshallup/blum-autoclicker-js/raw/main/logo.png
+// @downloadURL  https://github.com/Marshallup/blum-autoclicker-js/raw/main/script.js
+// @updateURL    https://github.com/Marshallup/blum-autoclicker-js/raw/main/script.js
+// @homepage     https://github.com/Marshallup
 // ==/UserScript==
 
 (function () {
