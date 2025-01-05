@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Blum Autoclicker JS
-// @version      1.0.2
+// @version      1.1.0
 // @namespace    Violentmonkey Scripts
 // @description  Blum Autoclicker WEB TG
 // @author       Marshallup
